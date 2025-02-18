@@ -2,7 +2,6 @@ package com.api.base;
 
 import static io.restassured.RestAssured.*;
 
-import com.api.models.request.LoginRequest;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -18,7 +17,7 @@ public class BaseService { // wrapper for class Assured!!
 		requestSpecification = given().baseUri(BASE_URI);
 	}
 	
-	protected Response postRequest(LoginRequest payload, String endpoint) {
+	protected Response postRequest(Object payload, String endpoint) {
 		return requestSpecification.contentType(ContentType.JSON).body(payload).post(endpoint);
 	}
 
