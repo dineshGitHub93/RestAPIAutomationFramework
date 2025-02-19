@@ -20,5 +20,9 @@ public class BaseService { // wrapper for class Assured!!
 	protected Response postRequest(Object payload, String endpoint) {
 		return requestSpecification.contentType(ContentType.JSON).body(payload).post(endpoint);
 	}
+	
+	protected Response postRequest(String baseURI, Object payload, String endpoint) {
+		return requestSpecification.baseUri(baseURI).contentType(ContentType.JSON).body(payload).post(endpoint);
+	}
 
 }

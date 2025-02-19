@@ -15,6 +15,8 @@ public class LoginAPITest1 {
 	public void loginTest() {
 		
 		LoginRequest loginRequest = new LoginRequest("string", "string");
+		
+		
 		AuthService authService = new AuthService();
 		Response response = authService.login(loginRequest);
 		LoginResponse loginResponse = response.as(LoginResponse.class);
