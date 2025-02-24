@@ -12,7 +12,7 @@ public class SingupAPITest {
 	@Test
 	public void signupTest() {
 		
-		SignupRequest signupRequest = new SignupRequest("string", "string","string","string","string","9537188789");
+		SignupRequest signupRequest = new SignupRequest("johnD", "securepasswordD123","johnD.doe@example.com","JohnD","DoeD","9679677698");
 		
 		AuthService auth = new AuthService();
 		Response response = auth.signup(signupRequest);

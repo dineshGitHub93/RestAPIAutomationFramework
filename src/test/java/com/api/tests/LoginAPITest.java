@@ -25,9 +25,9 @@ public class LoginAPITest {
 		
 		//Approach 2
 		Response response =	given()
-					.baseUri("http://localhost:3000/")
+					.baseUri("http://64.227.160.186:8080/")
 					.header("Content-Type","application/json")
-					.body("{\"email\": \"user@example.com\",\"password\": \"password\"}")
+					.body("{\"username\": \"String\",\"password\": \"string\"}")
 					.post("api/auth/login");
 	
 		System.out.println(response.asPrettyString());	

@@ -16,11 +16,11 @@ public class LoginAPITest1 {
 		
 		LoginRequest loginRequest = new LoginRequest("string", "string");
 		
-		
 		AuthService authService = new AuthService();
 		Response response = authService.login(loginRequest);
 		LoginResponse loginResponse = response.as(LoginResponse.class);
 		System.out.println(response.asPrettyString());
+	
 		
 		//Print the values after done the de-serialization
 		System.out.println(loginResponse.getToken());
