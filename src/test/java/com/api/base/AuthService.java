@@ -1,5 +1,7 @@
 package com.api.base;
 
+import java.util.HashMap;
+
 import com.api.models.request.ForgotPasswordRequest;
 import com.api.models.request.LoginRequest;
 import com.api.models.request.SignupRequest;
@@ -19,5 +21,12 @@ public class AuthService extends BaseService {
 	
 	public Response forget_password(ForgotPasswordRequest payload) {
 		return postRequest(payload, BASE_PATH+"forgot-password");
+	}
+	
+	//Pojo class is not required when we have only one parameter of payload to get api
+	public Response forget_password(String emailAddress) {
+		HashMap<String, String> payload = new HashMap<String, String>();
+		payload.put("email", emailAddress);
+		return postRequest(emailAddress, BASE_PATH+"forgot-password");
 	}
 }

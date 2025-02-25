@@ -22,6 +22,19 @@ public class ForgotPasswordRequest {
 		return "ForgotPasswordRequest [email=" + email + "]";
 	}
 	
-	
+	public static class Builder{
+		
+		private String email;
+		
+		public Builder email(String email) {
+			this.email = email;
+			return this;		
+		}
+		
+		public ForgotPasswordRequest build() {
+			ForgotPasswordRequest forgetPassword = new ForgotPasswordRequest(email);
+			return forgetPassword;
+		}
+	}
 
 }
