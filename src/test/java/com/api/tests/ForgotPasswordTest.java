@@ -19,7 +19,7 @@ public class ForgotPasswordTest {
 		
 		
 	}
-	@Test(description = "Verify if sign-up API is working..!",dependsOnMethods = "ForgotPasswordTest") 
+	@Test(description = "Verify if sign-up API is working..!",dependsOnMethods = "forgotPasswordTest") 
 	public void forgotPasswordBuilderTest() {
 		// approch-2 using Builder class
 		

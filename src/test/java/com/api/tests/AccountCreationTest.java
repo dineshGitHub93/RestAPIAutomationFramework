@@ -1,5 +1,6 @@
 package com.api.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.api.base.AuthService;
@@ -14,17 +15,18 @@ public class AccountCreationTest {
 		
 		//To implement builder Design pattern
 		SignupRequest singupRequest =new SignupRequest.Builder()
-		.userName("jane_smith")
-		.password("mypassword456")
-		.email("jane.smith@example.com")
-		.firstName("Jane")
-		.lastName("Smith")
-		.mobileNumber("9876543210")
+		.userName("jane_smit2")
+		.password("mypassword4562")
+		.email("jane.smith@example2.com")
+		.firstName("Jane2")
+		.lastName("Smith2")
+		.mobileNumber("9876543214")
 		.build();
 		
 		AuthService authService = new AuthService();
 		Response response = authService.signup(singupRequest);
-		System.out.println(response.asPrettyString());
+		Assert.assertEquals(response.asPrettyString(), "User registered successfully!");
+		
 	}
 
 }
