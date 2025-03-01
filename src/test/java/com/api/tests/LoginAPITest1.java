@@ -13,11 +13,9 @@ public class LoginAPITest1 {
 	
 	@Test(description = "Verify if login API is working..!")
 	public void loginTest() {
-		
-		LoginRequest loginRequest = new LoginRequest("string", "string");
-		
+				
 		AuthService authService = new AuthService();
-		Response response = authService.login(loginRequest);
+		Response response = authService.login(new LoginRequest("Gayathri123", "Gayathri123"));
 		LoginResponse loginResponse = response.as(LoginResponse.class);
 		System.out.println(response.asPrettyString());
 	

@@ -17,6 +17,10 @@ public class BaseService { // wrapper for class Assured!!
 		requestSpecification = given().baseUri(BASE_URI);
 	}
 	
+	protected void setAuthToken(String token) {
+		requestSpecification.header("Authorization", "Bearer "+token);
+	}
+	
 	protected Response postRequest(Object payload, String endpoint) {
 		return requestSpecification.contentType(ContentType.JSON).body(payload).post(endpoint);
 	}
@@ -25,4 +29,7 @@ public class BaseService { // wrapper for class Assured!!
 		return requestSpecification.baseUri(baseURI).contentType(ContentType.JSON).body(payload).post(endpoint);
 	}
 
+	protected Response getRequest(String endpoint) {
+		return requestSpecification.get(endpoint);
+	}
 }
