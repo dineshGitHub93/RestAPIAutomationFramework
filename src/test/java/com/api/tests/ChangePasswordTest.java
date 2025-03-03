@@ -19,7 +19,7 @@ public class ChangePasswordTest {
 	public void updatePasswordTest() {
 		//Login api call
 		AuthService authService = new AuthService();
-		Response response = authService.login(new LoginRequest("Gayathri123", "Gayathri123"));
+		Response response = authService.login(new LoginRequest("john_doe", "securepassword123"));
 		LoginResponse loginResponse = response.as(LoginResponse.class);
 		System.out.println(response.asPrettyString());
 		
@@ -29,14 +29,14 @@ public class ChangePasswordTest {
 		response = userProfileManagementService.getProfile(loginResponse.getToken());
 		System.out.println(response.asPrettyString());
 		UserProfileResponse userProfileResponse=response.as(UserProfileResponse.class);
-		Assert.assertEquals(userProfileResponse.getFirstName(), "Gayathri123");
+		Assert.assertEquals(userProfileResponse.getFirstName(), "Test123");
 		
 		//Change password
 		System.out.println("--------------------------------------------------");
 		UpdatePasswordRequest updatePasswordRequest = new UpdatePasswordRequest.Builder()
-														.currentPassword("Gayathri123")
-														.newPassword("Kunja123")
-														.confirmPassword("Kunja123")
+														.currentPassword("securepassword123")
+														.newPassword("Test123")
+														.confirmPassword("Test123")
 														.build();
 		response = userProfileManagementService.changePassword(updatePasswordRequest, loginResponse.getToken());
 		System.out.println(response.asPrettyString());

@@ -18,7 +18,7 @@ public class UserProfileUpdateTest {
 	public void updateUserProfileTest() {
 		
 		AuthService authService = new AuthService();
-		Response response = authService.login(new LoginRequest("Gayathri123", "Gayathri123"));
+		Response response = authService.login(new LoginRequest("john_doe", "securepassword123"));
 	    LoginResponse loginResponse =	response.as(LoginResponse.class);
 		System.out.println(response.asPrettyString());
 		
@@ -27,13 +27,13 @@ public class UserProfileUpdateTest {
 		response = userProfileManagementService.getProfile(loginResponse.getToken());
 		System.out.println(response.asPrettyString());
 		UserProfileResponse userProfileResponse=response.as(UserProfileResponse.class);
-		Assert.assertEquals(userProfileResponse.getUsername(), "Gayathri123");
+		Assert.assertEquals(userProfileResponse.getUsername(), "john_doe");
 		
 		System.out.println("----------------------------------------------------------");
 		UserProfileRequest userProfileupdate = new UserProfileRequest.Builder()
-												.firstName("Gayathri123")
-												.lastName("Gayathri123")
-												.email("Gayathri123@gmail.com")
+												.firstName("Test123")
+												.lastName("Test123")
+												.email("Test123@gmail.com")
 												.mobileNumber("8888888889")
 												.build();
 		
