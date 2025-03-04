@@ -32,7 +32,7 @@ public class UserProfileUpdateTest {
 		System.out.println("----------------------------------------------------------");
 		UserProfileRequest userProfileupdate = new UserProfileRequest.Builder()
 												.firstName("Test123")
-												.lastName("Test123")
+												.lastName("Test123") 
 												.email("Test123@gmail.com")
 												.mobileNumber("8888888889")
 												.build();

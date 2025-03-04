@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.tests.GetAccountInfoByAccountIDTest">
+      <class name="com.api.tests.LoginAPITest1">
         <methods>
-          <include name="getAccountInfoByAccountIDTest"/>
+          <include name="loginTest"/>
         </methods>
-      </class> <!-- com.api.tests.GetAccountInfoByAccountIDTest -->
+      </class> <!-- com.api.tests.LoginAPITest1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

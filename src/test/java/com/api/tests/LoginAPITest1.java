@@ -1,6 +1,7 @@
 package com.api.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.api.base.AuthService;
@@ -9,13 +10,14 @@ import com.api.models.response.LoginResponse;
 
 import io.restassured.response.Response;
 
+@Listeners(com.api.listener.TestListener.class)
 public class LoginAPITest1 {
 	
 	@Test(description = "Verify if login API is working..!")
 	public void loginTest() {
 				
 		AuthService authService = new AuthService();
-		Response response = authService.login(new LoginRequest("Gayathri123", "Gayathri123"));
+		Response response = authService.login(new LoginRequest("Gayathri123", "Kunja123"));
 		LoginResponse loginResponse = response.as(LoginResponse.class);
 		System.out.println(response.asPrettyString());
 	
@@ -26,8 +28,8 @@ public class LoginAPITest1 {
 		System.out.println(loginResponse.getUsername());
 		
 		Assert.assertTrue(loginResponse.getToken() != null);
-		Assert.assertEquals(loginResponse.getEmail(), "bac@gmail.com");
-		Assert.assertEquals(loginResponse.getUsername(), "string");
+		Assert.assertEquals(loginResponse.getEmail(), "Gayathri123@gmail.com");
+		Assert.assertEquals(loginResponse.getUsername(), "Gayathri123");
 		
 	}
 	
