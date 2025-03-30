@@ -8,6 +8,7 @@ on:
   schedule:
     - cron: 00 18 * * *
     - cron: 00 3 * * * 
+    - cron: 55 22 * * *   # Runs at 10:55 PM UTC
 
 jobs:
   build:
