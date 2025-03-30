@@ -31,10 +31,10 @@ public class UserProfileUpdateTest {
 		
 		System.out.println("----------------------------------------------------------");
 		UserProfileRequest userProfileupdate = new UserProfileRequest.Builder()
-												.firstName("Test123")
-												.lastName("Test123") 
-												.email("Test123@gmail.com")
-												.mobileNumber("8888888889")
+												.firstName("Kunja")
+												.lastName("Dinesh") 
+												.email("Kunja@gmail.com")
+												.mobileNumber("7788888889")
 												.build();
 		
 		response=userProfileManagementService.updateProfile(userProfileupdate, loginResponse.getToken());

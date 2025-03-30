@@ -17,7 +17,7 @@ public class GetUserProfileRequestTest {
 	public void getProfileInfoTest() {
 		
 		AuthService auth = new AuthService();
-		Response response = auth.login(new LoginRequest("Gayathri123", "Gayathri123"));
+		Response response = auth.login(new LoginRequest("Gayathri123", "Kunja123"));
 		LoginResponse loginResponse = response.as(LoginResponse.class);
 		System.out.println(loginResponse.getToken());
 		

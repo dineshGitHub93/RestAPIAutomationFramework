@@ -1,5 +1,7 @@
 package com.api.tests;
 
+import java.util.List;
+
 import org.testng.annotations.Test;
 
 import com.api.base.AccountService;
@@ -23,8 +25,8 @@ public class GetAccountsDetailsTest {
 		System.out.println("------------------------------------------------------");
 		AccountService accountService = new AccountService();
 		response = accountService.getAccounts(loginResponse.getToken());
-		AccountCreationResponse accountCreationResponse = response.as(AccountCreationResponse.class);
-		System.out.println(response.asPrettyString());
+		List<AccountCreationResponse> accountCreationResponse = (List<AccountCreationResponse>) response.as(AccountCreationResponse.class);
+		System.out.println(response.asPrettyString()); 
 		
 	}
 }
